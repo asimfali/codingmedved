@@ -1,3 +1,6 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def landing(request):
+    name = 'simfali'
+    return render(request, 'landing/landing.html', {'name': name})

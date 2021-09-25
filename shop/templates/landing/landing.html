@@ -16,6 +16,12 @@
         <div class="col-lg-4 offset-md-4">
             <div class="title"><h1>Наш магазин скоро откроется</h1></div>
             <div class="title"><h1>Оставляйте ваш email в форме ниже</h1></div>
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" class="btn btn-primary" value="Отправить">
+            </form>
+
         </div>
     </div>
 </div>

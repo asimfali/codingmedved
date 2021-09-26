@@ -11,19 +11,30 @@
     <title>Title</title>
 </head>
 <body>
-<div class="container">
-    <div class="row">
-        <div class="col-lg-4 offset-md-4">
-            <div class="title"><h1>Наш магазин скоро откроется</h1></div>
-            <div class="title"><h1>Оставляйте ваш email в форме ниже</h1></div>
-            <form action="" method="post">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <input type="submit" class="btn btn-primary" value="Отправить">
-            </form>
-
+<div class="general-container">
+    <div class="container top-container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <h1 class="title">Наш магазин скоро откроется! <br>
+                    Оставляйте ваш email в форме ниже</h1>
+                <div>
+                    <form action="" method="post" class="form-inline text-center">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label>Ваш имя:</label>
+                            <input type="text" name="{{ form.name.name }}" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Ваш email:</label>
+                            <input type="text" name="{{ form.name.name }}" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-orange" style="margin-top: 15px;" value="Отправить">Отправить</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
+
 </div>
 
 </body>

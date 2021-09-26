@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="section-top">
+        <img src="{% static 'img/slider0.jpg' %}" alt="" class="img-responsive">
+    </div>
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                {% for products_image in products_images %}
+                    <div class="col-lg-3">
+                        <div class="product-item">
+                            <div class="box"><img src="{{ products_image.image.url }}" class="img-responsive"></div>
+                            <h4>
+                                {{ products_image.product.name }}
+                            </h4>
+                            <p>{{ products_image.product.description|truncatechars_html:50 }}</p>
+                            <div>{{ products_image.product.price }} RUB</div>
+                            <div class="add-to-cart-btn">
+                                <div class="btn btn-success">
+                                    Добавить в корзину
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <h1>Test123</h1>
+{% endblock %}
